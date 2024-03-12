@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <!-- Start cookieyes banner -->
+    <script id="cookieyes" type="text/javascript"
+        src="https://cdn-cookieyes.com/client_data/1201ad84cf846c5c4717aa11/script.js"></script>
+    <!-- End cookieyes banner -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #111;
+        }
+
+        .container {
+            background-color: #353535;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4px;
+            max-width: 400px;
+            width: 100%;
+            margin: auto;
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        .qr-code-container {
+            margin-top: 20px;
+        }
+
+        .qr-code {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: none;
+        }
+
+        .title {
+            font-size: 32px;
+            margin-bottom: 10px;
+            margin-top: 5px;
+            color: #1e1e1e;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+        }
+
+        .description {
+            font-size: 18px;
+            color: #cbcbcb;
+            margin-bottom: 20px;
+        }
+
+        .input-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #qrText {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 10px;
+        }
+
+        .generate-btn,
+        .download-btn {
+            color: #232323;
+            border: none;
+            padding: 12px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            margin-top: 10px;
+            width: 55%;
+            transition: background-color 0.3s ease;
+        }
+
+        .generate-btn {
+            background-color: #4caf50;
+        }
+
+        .generate-btn:hover {
+            background-color: #45a049;
+        }
+
+        .download-btn {
+            background-color: #4caf50;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #45a049;
+        }
+
+        .download-btn:disabled {
+            background-color: #333;
+            cursor: not-allowed;
+        }
+    </style>
+    <title>Richard - Website | QR kód generátor</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">QR Code Generátor</div>
+        <div class="description">Zadajte text na vygenerovanie QR kódu:</div>
+        <div class="input-container">
+            <input type="text" id="qrText" placeholder="Zadajte text">
+        </div>
+        <button class="generate-btn" onclick="generateQRCode()">Generovať QR kód</button>
+        <button class="download-btn" onclick="downloadQRCode()" disabled>Stiahnuť QR kód</button>
+        <div class="qr-code" id="qrcode"></div>
+    </div>
+
+    <script src="qrcode.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var qrGenerated = false;
+
+            function generateQRCode() {
+                if (qrGenerated) {
+                    alert("Kód QR už bol vygenerovaný. Obnovte stránku, aby ste získali nový kód.");
+                    return;
+                }
+
+                var qrText = document.getElementById("qrText").value;
+
+                if (qrText.trim() === "") {
+                    alert("Zadajte text na vygenerovanie QR kódu.");
+                    return;
+                }
+
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    text: qrText,
+                    width: 128,
+                    height: 128,
+                });
+
+                document.querySelector(".qr-code").style.display = "block";
+                enableDownloadButton();
+                qrGenerated = true;
+            }
+
+            function enableDownloadButton() {
+                document.querySelector(".download-btn").disabled = false;
+            }
+
+            function downloadQRCode() {
+                var canvas = document.getElementById("qrcode").getElementsByTagName("canvas")[0];
+                var imageData = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+                var link = document.createElement("a");
+                link.href = imageData;
+                link.download = "qrcode.png";
+                link.click();
+            }
+
+            document.querySelector(".generate-btn").addEventListener("click", generateQRCode);
+            document.querySelector(".download-btn").addEventListener("click", downloadQRCode);
+        });
+    </script>
+
+</body>
+</html>
