@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="sk">
+
+<head>
+    <!-- Start cookieyes banner --> <script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/1201ad84cf846c5c4717aa11/script.js"></script> <!-- End cookieyes banner -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/favicon.png">
+    <title>Richard Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #17191c;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: calc(100% - 40px);
+            max-width: 800px;
+            padding: 10px;
+            border: 2px solid #00cc66;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background: #1a1a1a;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .tagline {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .project-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .project {
+            width: calc(100% - 10px);
+            background-color: #333;
+            padding: 53px;
+            border-radius: 10px;
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .project h3 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            margin-top: 0;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #00cc66;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #009955;
+        }
+
+        .website-text {
+            text-align: center;
+            color: #ffffff;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+
+        .status-text {
+            text-align: center;
+            color: #00cc66;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .status-text a {
+            color: #00cc66 !important;
+        }
+
+        .status-text:hover {
+            text-decoration: underline;
+        }
+
+        @media (min-width: 600px) {
+            .project {
+                width: calc(33.33% - 10px);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .project-container {
+                justify-content: center;
+            }
+
+            .project {
+                width: calc(100% - 10px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="avatar">
+            <img src="/image/richard.png" alt="Avatar">
+        </div>
+        <div class="tagline">Ahoj volám sa Richard a venujem sa kódovaniu projektov.</div>
+
+        <div class="project-container">
+            <div class="project">
+                <h3>Generátor hesiel</h3>
+                <a href="https://richard-website.sk/generator-hesiel/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Počítadlo znakov</h3>
+                <a href="https://richard-website.sk/pocitadlo-znakov/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Rýchle písanie</h3>
+                <a href="https://richard-website.sk/fast-type/" class="button">Otvoriť projekt</a>
+            </div>
+        </div>
+
+        <div class="project-container">
+            <div class="project">
+                <h3>Tvorba AI fotiek</h3>
+                <a href="https://richard-website.sk/ai-image/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Qr kód generátor</h3>
+                <a href="https://richard-website.sk/qr-generator/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Zoznam úloh</h3>
+                <a href="https://richard-website.sk/zoznam-uloh/" class="button">Otvoriť projekt</a>
+            </div>
+        </div>
+
+        <div class="project-container">
+            <div class="project">
+                <h3>Zvetšovač emoji</h3>
+                <a href="https://richard-website.sk/enlarge/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Odpočet udalosti</h3>
+                <a href="https://richard-website.sk/odpocet-udalosti/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Klikačka</h3>
+                <a href="https://richard-website.sk/klikacka/" class="button">Otvoriť projekt</a>
+            </div>
+        </div>
+
+        <div class="project-container">
+            <div class="project">
+                <h3>Počítanie</h3>
+                <a href="https://richard-website.sk/pocitanie/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Piškvorky</h3>
+                <a href="https://richard-website.sk/piskvorky/" class="button">Otvoriť projekt</a>
+            </div>
+            <div class="project">
+                <h3>Počasie</h3>
+                <a href="https://richard-website.sk/pocasie/" class="button">Otvoriť projekt</a>
+            </div>
+        </div>
+
+        <div class="project-container">
+            <div class="project">
+                <h3>Wifi QR generátor</h3>
+                <a href="https://richard-website.sk/wifi-qr-generator" class="button">Otvoriť projekt</a>
+            </div>
+        </div>
+
+        <div class="status-text">
+            <a href="https://status.richard-website.sk" target="_blank">Status webu</a>
+        </div>
+
+        <div class="website-text">
+            © 2024 Richard - Website
+        </div>
+    </div>
+
+</body>
+</html>
